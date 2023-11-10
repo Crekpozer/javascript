@@ -19,6 +19,10 @@ section {
     box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.452);
 }
 
+#ires {
+    width: 90px;
+}
+
 footer {
     color: white;
     text-align: center;
