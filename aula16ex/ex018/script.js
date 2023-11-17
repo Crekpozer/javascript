@@ -1,5 +1,6 @@
 let numeros = []
 let lista = document.querySelector('#txtl')
+let resposta = document.querySelector('#res')
 
 function adicionar(){
     let valor = document.querySelector('#txtn')
@@ -17,10 +18,8 @@ function adicionar(){
 }
 
 function finalizar(){
-
-    let resposta = document.querySelector('#res')
-
-    resposta.innerHTML = `A lista tem ${numeros.length} valores <br>`
+    
+    resposta.innerHTML = `<p style="margin:10px">A lista tem ${numeros.length} valores <br></p>`
     
     if (numeros.length == 0){
         alert('[ERRO] A lista está vazia, adicione algum valor antes de finalizar')
@@ -32,10 +31,29 @@ function finalizar(){
                 maiornumero = Number(numeros[i])
             }
         }
+        
+        resposta.innerHTML += `<p style="margin:10px">O maior valor é ${maiornumero} <br></p>`
 
-        let menornumero =
+        let menornumero = 101
 
-        resposta.innerHTML = `O maior valor é ${maiornumero}`
+        for (var i = 0; i <= numeros.length; i++){
+            if (menornumero > numeros[i]){
+                menornumero = Number(numeros[i])
+            }
+        }
 
+        resposta.innerHTML += `<p style="margin:10px">O menor valor é ${menornumero} <br></p>`
+
+        let somatotal = 0
+
+        for (var i = 0; i < numeros.length; i++){
+            somatotal = somatotal + Number(numeros[i])
+        }
+
+        resposta.innerHTML += `<p style="margin:10px">A soma total dos valores é ${somatotal} <br></p>`
+        
+        let mediavalores = somatotal / numeros.length
+
+        resposta.innerHTML += `<p style="margin:10px">A media dos valores é ${mediavalores} <br></p>`
     }
 }
